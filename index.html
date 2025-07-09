@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intervue Technical Interview Resources</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #333;
+    }
+    a { color: #0073e6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      font-family: 'Arial Black', Arial, sans-serif;
+      letter-spacing: 0.1em;
+    }
+    nav { display: flex; gap: 1rem; }
+    nav button {
+      background: none;
+      border: 1px solid #333;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      border-radius: 3px;
+    }
+    nav button.signup {
+      background-color: #000;
+      color: #fff;
+      border: none;
+    }
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .search-bar { margin: 1rem 0 2rem; }
+    .search-bar input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+    }
+    h1.section-title {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #f9f9f9;
+    }
+    .card .tag {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .tag.easy { background-color: #007bff; }
+    .tag.medium { background-color: #ff9900; }
+    .tag.hard { background-color: #28a745; }
+    .card h3 { margin: 0.5rem 0; font-size: 1.1rem; }
+    .card p { font-size: 0.9rem; color: #555; }
+    .security {
+      background: #f0f0f0;
+      padding: 2rem 1rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .security h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+    .security p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #666;
+    }
+    .security-cards {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .security-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 180px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .security-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .security-card p { font-size: 0.85rem; color: #555; }
+    .testimonial {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    .testimonial p {
+      font-style: italic;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+    .testimonial .author {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #222;
+    }
+    .explore-products {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #fff;
+      text-align: center;
+    }
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+    .product-card h4 { margin: 0.5rem 0; }
+    .product-card p { font-size: 0.9rem; color: #555; }
+    .product-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    .faq {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .faq h2 { text-align: center; margin-bottom: 1rem; }
+    .faq-item {
+      border-top: 1px solid #ddd;
+      padding: 0.75rem 0;
+    }
+    .faq-item summary {
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .faq-item p { margin: 0.5rem 0 0 1rem; color: #555; }
+    .faq-contact {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .faq-contact a {
+      font-weight: 600;
+      color: #0073e6;
+    }
+    footer {
+      background: #111;
+      color: #ccc;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+    }
+    footer .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    footer .footer-column { flex: 1 1 150px; }
+    footer .footer-column h4 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    footer a {
+      color: #ccc;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    footer a:hover { color: #fff; }
+    footer .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      border-top: 1px solid #333;
+      padding-top: 1rem;
+      color: #666;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 0.5rem;
+      }
+      main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+      }
+      .security-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .security-card {
+        width: 100%;
+        max-width: 300px;
+      }
+      .explore-products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">intervue</div>
+  <nav>
+    <button>Login</button>
+    <button class="signup">Signup</button>
+  </nav>
+</header>
+<main>
+  <h1 class="section-title">Technical Interview Resources</h1>
+  <div class="search-bar">
+    <input type="search" placeholder="Search for resource here" aria-label="Search resources" />
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="tag easy">Easy</div>
+      <h3>Design a Free Food App</h3>
+      <p>We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
+    </div>
+    <div class="card">
+      <div class="tag medium">Medium</div>
+      <h3>Design a Free Food App</h3>
+      <p>We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
+    </div>
+    <div class="card">
+      <div class="tag hard">Hard</div>
+      <h3>Design a Free Food App</h3>
+      <p>We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
+    </div>
+    <div class="card">
+      <div class="tag easy">Easy</div>
+      <h3>Design a Free Food App</h3>
+      <p>We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
+    </div>
+    <div class="card">
+      <div class="tag medium">Medium</div>
+      <h3>Design a Free Food App</h3>
+      <p>We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
+    </div>
+    <div class="card">
+      <div class="tag hard">Hard</div>
+      <h3>Design a Free Food App</h3>
+      <p>We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
+    </div>
+    <div class="card">
+      <div class="tag easy">Easy</div>
+      <h3>Design a Free Food App</h3>
+      <p>We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
+    </div>
+    <div class="card">
+      <div class="tag medium">Medium</div>
+      <h3>Design a Free Food App</h3>
+      <p>We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
+    </div>
+    <div class="card">
+      <div class="tag hard">Hard</div>
+      <h3>Design a Free Food App</h3>
+      <p>We created this guide after speaking with our community of interviewers, which includes over 100 current and former Amazon engineers, as well as our corpus of mock interviews.</p>
+    </div>
+  </div>
+
+  <section class="security">
+    <h2>Security is our top priority</h2>
+    <p>Intervue serves startups to Fortune 500 companies with enterprise grade security backed by 10x engineers</p>
+    <div class="security-cards">
+      <div class="security-card">
+        <h3>Security</h3>
+        <p>Protecting your data at every layer is key to Intervue’s success.</p>
+      </div>
+      <div class="security-card">
+        <h3>Compliance</h3>
+        <p>Intervue’s grade compliance certifications make sure you have the best standards to achieve those commitments.</p>
+      </div>
+      <div class="security-card">
+        <h3>Interest for Startups</h3>
+        <p>Intervue for Enterprises</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <p>After interviewing candidates on Intervue, we were able to convert at least 5% of people from our application base to hires.</p>
+    <div class="author">Niket Gupta<br>Group head of talent acquisition, Yubi</div>
+  </section>
+
+  <section class="explore-products">
+    <div class="product-card">
+      <img src="https://assets.intervue.io/images/matching-interviewer.png" alt="Matching Interviewer" />
+      <h4>On-demand</h4>
+      <p>Save 10% of engineering & recruitment bandwidth, outsource candidate interviews to us.</p>
+      <a href="#">Know more →</a>
+    </div>
+    <div class="product-card">
+      <img src="https://assets.intervue.io/images/live-interviews.png" alt="Live Interviews" />
+      <h4>Live Interviews</h4>
+      <p>Assess candidates in real-time with our live coding environment & integrated video calls.</p>
+      <a href="#">Know more →</a>
+    </div>
+    <div class="product-card">
+      <img src="https://assets.intervue.io/images/assessments.png" alt="Assessments" />
+      <h4>Assessments</h4>
+      <p>Shared assessments across batches with MCQs, Programming and Subjective questions.</p>
+      <a href="#">Know more →</a>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>FAQs</h2>
+    <details class="faq-item">
+      <summary>How do I schedule an interview?</summary>
+      <p>Details on scheduling an interview will be provided here.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Will I be charged per interview?</summary>
+      <p>Information about charges per interview will be provided here.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I get a trial for On-demand interviews?</summary>
+      <p>Trial information for On-demand interviews will be provided here.</p>
+    </details>
+    <div class="faq-contact">
+      <p>Still have doubts? <a href="#">Talk to our representative</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>intervue</h4>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Linkedin</a>
+      <a href="#">Pinterest</a>
+    </div>
+    <div class="footer-column">
+      <h4>Company</h4>
+      <a href="#">Be gentle</a>
+      <a href="#">Erfahrung</a>
+      <a href="#">Allgier</a>
+      <a href="#">Preise</a>
+      <a href="#">Standorte</a>
+    </div>
+    <div class="footer-column">
+      <h4>Resources</h4>
+      <a href="#">Blog</a>
+      <a href="#">FAQ</a>
+      <a href="#">LIFT Media</a>
+      <a href="#">Offene Stellen</a>
+      <a href="#">Presse Kit</a>
+    </div>
+    <div class="footer-column">
+      <h4>Product</h4>
+      <a href="#">Data Termin</a>
+      <a href="#">Freunde einladen</a>
+      <a href="#">Patienteninformationen</a>
+    </div>
+    <div class="footer-column">
+      <h4>Product</h4>
+      <a href="#">Blog</a>
+      <a href="#">FAQ</a>
+      <a href="#">LIFT Media</a>
+      <a href="#">Offene Stellen</a>
+      <a href="#">Presse Kit</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2023 Intervue. Crafted by great minds.</div>
+</footer>
+</body>
+</html>
